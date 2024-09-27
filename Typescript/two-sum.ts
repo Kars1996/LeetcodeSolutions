@@ -9,3 +9,17 @@ function twoSum(nums: number[], target: number): number[] {
     }
     return [];
 }
+
+
+// Optimal Code
+function twoSumOptimal(nums: number[], target: number): number[] {
+    const m = new Map();
+    for (let i = 0; i < nums.length; ++i) {
+      let comp = target - nums[i];
+      if (m.has(comp)) {
+        return [m.get(comp), i];
+      }
+      m.set(nums[i], i);
+    }
+    return [];
+  }
